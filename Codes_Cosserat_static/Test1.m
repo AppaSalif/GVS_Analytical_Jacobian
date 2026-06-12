@@ -10,14 +10,14 @@ format long
 
 %Parameters
 
-Param.E = 10^6;                       % Young modulus
+Param.E = 10^4;                       % Young modulus
 Param.nu = 0.38;                      % Poisson ratio
 Param.L = 0.5;                          % Rod length
-Param.r = 0.02;                       % rod radius
+Param.r = 0.03;                       % rod radius
 Param.A =  pi*Param.r^2;              % Cross section area
 Param.V = Param.L*Param.A;            % rod volume
 Param.G = Param.E/(2*(1+Param.nu));   % shear modulus
-Param.m = 0.3;                        % Beam mass
+Param.m = 0.05;                        % Beam mass
 Param.rho = Param.m/Param.V;          % Mass density
 Param.g =[0 ; 0 ; 0 ; 0 ; 0; -9.81]; % gravity
 Param.J1 = pi*Param.r^4/2; % Polar inertia moment
@@ -29,10 +29,10 @@ Param.M = diag([Param.rho*Param.J1,Param.rho*Param.J2,Param.rho*Param.J3,Param.r
 Param.Forces_Tendons=[0;0;0;0];           % Pas d'actionnement
 Param.Ftip= [0;0;0;0;0;0];
 
-Param.dX=Param.L/100;                         % spatial step
+Param.dX=Param.L/200;                         % spatial step
 Param.n_X=length(Param.dX:Param.dX:Param.L); % Number of section
 
-Param.DeltaX2 = Param.L/100;
+Param.DeltaX2 = Param.L/200;
 Param.n_seg = length(Param.DeltaX2:Param.DeltaX2:Param.L);
 
 Param.Rb = 0.02;     % Distance between a tendon and the backbone
